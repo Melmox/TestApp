@@ -6,15 +6,14 @@
 //
 
 import UIKit
-import Alamofire
 
-class TableViewController: UITableViewController {
+class MostEmailedTableViewController: UITableViewController {
     @IBOutlet var mostEmailedTable: UITableView!
     var listOfMailedNews =  [News]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Services.sharedInstance.getApiData(partPathApi: "") { apiData in
+        Services.sharedInstance.getApiData(partPathApi: "emailed") { apiData in
             self.listOfMailedNews = apiData
             
             DispatchQueue.main.async {
@@ -44,12 +43,14 @@ class TableViewController: UITableViewController {
 
      override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          tableView.deselectRow(at: indexPath, animated: true)
-         if let vc = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController{
-             vc.url = listOfMailedNews[indexPath.row].url
-             self.navigationController?.pushViewController(vc, animated: true)
-         }
-         performSegue(withIdentifier: "showMostEmailed", sender: self)
+         var urlSend: String
+         urlSend = listOfMailedNews[indexPath.row].url
+         performSegue(withIdentifier: "showMostEmailed", sender: urlSend)
 
      }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? WebViewController, let urlSend = sender as? String {
+            vc.url = urlSend
+            }
+        }
 }

@@ -13,24 +13,13 @@ class WebViewController: UIViewController {
 
 
     @IBOutlet weak var webViewArticle: WKWebView!
-    
-//    let url = URL(string: "https://www.google.com")
     var url = ""
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let urlReq = URLRequest(url: URL(string: url)!)
         webViewArticle.load(urlReq)
-//        webViewArticle.load(URLRequest(url: url))
-//        webViewArticle.allowsBackForwardNavigationGestures = true
     }
-    
-//        override func loadView() {
-//            webViewArticle = WKWebView()
-////            webViewArticle.navigationDelegate = self
-//            view = webViewArticle
-//        }
+
 
     
 
