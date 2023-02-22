@@ -16,3 +16,15 @@ struct News : Codable{
     var url, title : String
     var id : Int
 }
+
+extension News{
+    func isFavorite() -> Bool{
+        let allFavorites = Services().fetch()
+        for article in allFavorites{
+            if article.id == self.id{
+                return true
+            }
+        }
+        return false
+    }
+}

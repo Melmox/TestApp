@@ -3,12 +3,54 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "MostEmailedTableViewController.tableView(_:didSelectRowAt:):MostEmailedTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Services().fetch()">
+            </PersistentString>
+            <PersistentString
+               value = "Services().fetch()[2].id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "TableViewController.viewDidLoad():TableViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "listOfMailedNews.count">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FavoriteTableViewController.tableView(_:leadingSwipeActionsConfigurationForRowAt:):FavoriteTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "listOfFavoriteNews[indexPath.row].toNews().isFavorite()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Services.delete(object:):Services.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fetch()">
+            </PersistentString>
+            <PersistentString
+               value = "object">
+            </PersistentString>
+            <PersistentString
+               value = "fetch().count">
+            </PersistentString>
+            <PersistentString
+               value = "news == fetch()[2]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WebViewController.url.getter:WebViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "WebViewController.viewDidLoad():WebViewController.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

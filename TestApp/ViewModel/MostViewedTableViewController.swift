@@ -42,6 +42,7 @@ class MostViewedTableViewController: UITableViewController {
      override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          tableView.deselectRow(at: indexPath, animated: true)
          var urlSend: String
+//         Services().saveData(itemToSave: listOfViewedNews[indexPath.row].title)
          urlSend = listOfViewedNews[indexPath.row].url
          performSegue(withIdentifier: "showMostViewed", sender: urlSend)
 
@@ -51,4 +52,25 @@ class MostViewedTableViewController: UITableViewController {
             vc.url = urlSend
             }
         }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let uploadedAction = UIContextualAction(style: .normal, title: title, handler: { (action, view, completionHandler) in completionHandler(true)
+        }
+        )
+        if listOfViewedNews[indexPath.row].isFavorite(){
+            Services().delete(object: listOfViewedNews[indexPath.row])
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+            uploadedAction.title = "Remove Favorite"
+            uploadedAction.backgroundColor = .systemYellow
+        }
+        else{
+            Services().save(object: listOfViewedNews[indexPath.row])
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+            uploadedAction.title = "Add Favorite"
+            uploadedAction.backgroundColor = .systemBlue
+        }
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [uploadedAction])
+        swipeConfiguration.performsFirstActionWithFullSwipe = false
+        return swipeConfiguration
+    }
 }

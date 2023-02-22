@@ -192,7 +192,7 @@
         <!--Favorites-->
         <scene sceneID="LVE-lT-7fJ">
             <objects>
-                <tableViewController id="Rjb-bc-nQG" sceneMemberID="viewController">
+                <tableViewController id="Rjb-bc-nQG" customClass="FavoriteTableViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fdo-c6-IeQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -223,6 +223,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Favorites" image="star" catalog="system" id="90q-Ya-Hgu"/>
                     <connections>
+                        <outlet property="FavoriteTable" destination="fdo-c6-IeQ" id="qfd-kL-YPD"/>
                         <segue destination="cBS-8I-WsT" kind="show" identifier="showFavorite" id="day-2f-vil"/>
                     </connections>
                 </tableViewController>
@@ -232,7 +233,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7F6-PM-vQW"/>
+        <segue reference="GHy-00-h2v"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="envelope" catalog="system" width="128" height="93"/>

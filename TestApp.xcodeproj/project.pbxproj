@@ -20,6 +20,9 @@
 		B3ABA3D629A5709500D5D644 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA3D529A5709500D5D644 /* Services.swift */; };
 		B3ABA3D829A6058B00D5D644 /* MostSharedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA3D729A6058B00D5D644 /* MostSharedTableViewController.swift */; };
 		B3ABA3DA29A605C200D5D644 /* MostViewedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA3D929A605C200D5D644 /* MostViewedTableViewController.swift */; };
+		B3ABA3ED29A63FA000D5D644 /* NewsEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA3EB29A63FA000D5D644 /* NewsEntity+CoreDataClass.swift */; };
+		B3ABA3EE29A63FA000D5D644 /* NewsEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA3EC29A63FA000D5D644 /* NewsEntity+CoreDataProperties.swift */; };
+		B3ABA3F029A64DA700D5D644 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA3EF29A64DA700D5D644 /* FavoriteTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		B3ABA3D529A5709500D5D644 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		B3ABA3D729A6058B00D5D644 /* MostSharedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSharedTableViewController.swift; sourceTree = "<group>"; };
 		B3ABA3D929A605C200D5D644 /* MostViewedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewedTableViewController.swift; sourceTree = "<group>"; };
+		B3ABA3EB29A63FA000D5D644 /* NewsEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B3ABA3EC29A63FA000D5D644 /* NewsEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B3ABA3EF29A64DA700D5D644 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		B5ABB666E98967E768E77397 /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
 		C33BD787596FF3F585310409 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,8 +92,7 @@
 				B3ABA3DE29A606CB00D5D644 /* View */,
 				B3ABA3DD29A6066100D5D644 /* Services */,
 				B3ABA3DC29A6064E00D5D644 /* Model */,
-				B3ABA3DB29A6061C00D5D644 /* ViewController */,
-				B3ABA3B229A4C0C400D5D644 /* AppDelegate.swift */,
+				B3ABA3DB29A6061C00D5D644 /* ViewModel */,
 				B3ABA3BE29A4C0C700D5D644 /* Assets.xcassets */,
 				B3ABA3C329A4C0C700D5D644 /* Info.plist */,
 				B3ABA3BB29A4C0C400D5D644 /* TestApp.xcdatamodeld */,
@@ -95,20 +100,23 @@
 			path = TestApp;
 			sourceTree = "<group>";
 		};
-		B3ABA3DB29A6061C00D5D644 /* ViewController */ = {
+		B3ABA3DB29A6061C00D5D644 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				B3ABA3D329A53C1000D5D644 /* WebViewController.swift */,
 				B3ABA3D929A605C200D5D644 /* MostViewedTableViewController.swift */,
 				B3ABA3D729A6058B00D5D644 /* MostSharedTableViewController.swift */,
 				B3ABA3CF29A52D8300D5D644 /* MostEmailedTableViewController.swift */,
+				B3ABA3EF29A64DA700D5D644 /* FavoriteTableViewController.swift */,
 			);
-			path = ViewController;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B3ABA3DC29A6064E00D5D644 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B3ABA3EB29A63FA000D5D644 /* NewsEntity+CoreDataClass.swift */,
+				B3ABA3EC29A63FA000D5D644 /* NewsEntity+CoreDataProperties.swift */,
 				B3ABA3CD29A5113200D5D644 /* DataModel.swift */,
 			);
 			path = Model;
@@ -117,6 +125,7 @@
 		B3ABA3DD29A6066100D5D644 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B3ABA3B229A4C0C400D5D644 /* AppDelegate.swift */,
 				B3ABA3D529A5709500D5D644 /* Services.swift */,
 			);
 			path = Services;
@@ -257,8 +266,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3ABA3D829A6058B00D5D644 /* MostSharedTableViewController.swift in Sources */,
+				B3ABA3ED29A63FA000D5D644 /* NewsEntity+CoreDataClass.swift in Sources */,
 				B3ABA3BD29A4C0C400D5D644 /* TestApp.xcdatamodeld in Sources */,
+				B3ABA3EE29A63FA000D5D644 /* NewsEntity+CoreDataProperties.swift in Sources */,
 				B3ABA3D029A52D8300D5D644 /* MostEmailedTableViewController.swift in Sources */,
+				B3ABA3F029A64DA700D5D644 /* FavoriteTableViewController.swift in Sources */,
 				B3ABA3B329A4C0C400D5D644 /* AppDelegate.swift in Sources */,
 				B3ABA3DA29A605C200D5D644 /* MostViewedTableViewController.swift in Sources */,
 				B3ABA3B529A4C0C400D5D644 /* SceneDelegate.swift in Sources */,
