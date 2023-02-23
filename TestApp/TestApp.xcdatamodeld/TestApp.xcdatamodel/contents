@@ -5,8 +5,5 @@
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="SaveHTML" representedClassName="SaveHTML" syncable="YES">
-        <attribute name="content" optional="YES" attributeType="Binary"/>
-        <attribute name="url" optional="YES" attributeType="String"/>
-    </entity>
+    <entity name="SaveHTML" representedClassName="SaveHTML" syncable="YES"/>
 </model>
