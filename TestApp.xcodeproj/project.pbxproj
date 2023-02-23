@@ -26,6 +26,9 @@
 		B3ABA40A29A6DE1F00D5D644 /* ArchivingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA40929A6DE1F00D5D644 /* ArchivingSession.swift */; };
 		B3ABA40C29A6DE5A00D5D644 /* WebArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA40B29A6DE5A00D5D644 /* WebArchive.swift */; };
 		B3ABA40E29A6DE8600D5D644 /* WebArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA40D29A6DE8600D5D644 /* WebArchiver.swift */; };
+		B3ABA41129A6FF2700D5D644 /* SaveHTML+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA40F29A6FF2700D5D644 /* SaveHTML+CoreDataClass.swift */; };
+		B3ABA41229A6FF2700D5D644 /* SaveHTML+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA41029A6FF2700D5D644 /* SaveHTML+CoreDataProperties.swift */; };
+		B3ABA41429A6FFDD00D5D644 /* WebArchiverServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA41329A6FFDD00D5D644 /* WebArchiverServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		B3ABA40929A6DE1F00D5D644 /* ArchivingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingSession.swift; sourceTree = "<group>"; };
 		B3ABA40B29A6DE5A00D5D644 /* WebArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebArchive.swift; sourceTree = "<group>"; };
 		B3ABA40D29A6DE8600D5D644 /* WebArchiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebArchiver.swift; sourceTree = "<group>"; };
+		B3ABA40F29A6FF2700D5D644 /* SaveHTML+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SaveHTML+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B3ABA41029A6FF2700D5D644 /* SaveHTML+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SaveHTML+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B3ABA41329A6FFDD00D5D644 /* WebArchiverServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebArchiverServices.swift; sourceTree = "<group>"; };
 		B5ABB666E98967E768E77397 /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
 		C33BD787596FF3F585310409 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +127,8 @@
 		B3ABA3DC29A6064E00D5D644 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B3ABA40F29A6FF2700D5D644 /* SaveHTML+CoreDataClass.swift */,
+				B3ABA41029A6FF2700D5D644 /* SaveHTML+CoreDataProperties.swift */,
 				B3ABA3EB29A63FA000D5D644 /* NewsEntity+CoreDataClass.swift */,
 				B3ABA3EC29A63FA000D5D644 /* NewsEntity+CoreDataProperties.swift */,
 				B3ABA3CD29A5113200D5D644 /* DataModel.swift */,
@@ -134,6 +142,7 @@
 				B3ABA40829A6DDC400D5D644 /* WebArchiver */,
 				B3ABA3B229A4C0C400D5D644 /* AppDelegate.swift */,
 				B3ABA3D529A5709500D5D644 /* Services.swift */,
+				B3ABA41329A6FFDD00D5D644 /* WebArchiverServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -292,11 +301,14 @@
 				B3ABA3B329A4C0C400D5D644 /* AppDelegate.swift in Sources */,
 				B3ABA3DA29A605C200D5D644 /* MostViewedTableViewController.swift in Sources */,
 				B3ABA40C29A6DE5A00D5D644 /* WebArchive.swift in Sources */,
+				B3ABA41429A6FFDD00D5D644 /* WebArchiverServices.swift in Sources */,
+				B3ABA41229A6FF2700D5D644 /* SaveHTML+CoreDataProperties.swift in Sources */,
 				B3ABA3B529A4C0C400D5D644 /* SceneDelegate.swift in Sources */,
 				B3ABA3D629A5709500D5D644 /* Services.swift in Sources */,
 				B3ABA3CE29A5113200D5D644 /* DataModel.swift in Sources */,
 				B3ABA3D429A53C1000D5D644 /* WebViewController.swift in Sources */,
 				B3ABA40E29A6DE8600D5D644 /* WebArchiver.swift in Sources */,
+				B3ABA41129A6FF2700D5D644 /* SaveHTML+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

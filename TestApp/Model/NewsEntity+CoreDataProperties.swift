@@ -21,7 +21,7 @@ extension NewsEntity {
     @NSManaged public var title: String?
 
 }
-
+//Допоміжні класи та нащадки створені за допомогою вбудованих інструментів XCode. Через них простіше взаємодіяти із CoreData
 extension NewsEntity : Identifiable {
 
 }

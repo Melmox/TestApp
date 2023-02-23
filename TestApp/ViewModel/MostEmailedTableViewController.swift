@@ -8,12 +8,13 @@
 import UIKit
 import CoreData
 
+//Цей контролер дуже схожий на два інших, вони являють собою таблиці на які виводяться дані. З комірками можна взаємодіяти
+
 class MostEmailedTableViewController: UITableViewController {
     @IBOutlet var mostEmailedTable: UITableView!
     var listOfMailedNews =  [News]()
     let archiveURL = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         .appendingPathComponent("cached").appendingPathExtension("webarchive")
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +68,7 @@ class MostEmailedTableViewController: UITableViewController {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
             uploadedAction.title = "Remove Favorite"
             uploadedAction.backgroundColor = .systemYellow
+            WebArchiverServices().delete(url: listOfMailedNews[indexPath.row].url)
         }
         else{
             Services().save(object: listOfMailedNews[indexPath.row])
@@ -77,7 +79,7 @@ class MostEmailedTableViewController: UITableViewController {
                 if let data = result.plistData {
                     do {
                         try data.write(to: self.archiveURL)
-                        print("Sucsess")
+                        WebArchiverServices().save(url: self.listOfMailedNews[indexPath.row].url, archiveURL: self.archiveURL)
                     } catch {
                         print("Error")
                     }

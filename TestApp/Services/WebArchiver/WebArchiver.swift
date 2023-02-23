@@ -8,6 +8,11 @@
 import Foundation
 import Fuzi
 
+/*
+ Весь код що лежить в папці WebArchiver було узято з https://github.com/ernesto-elsaesser/WebArchiver
+Ці класи планувалося використати для перетворення HTML сторінки журналу NYT на набір даних, який би пізніше використовувався для локального збереження та офлайн доступу до цих статей на телефоні користувача
+ */
+
 public struct ArchivingResult {
     public let plistData: Data?
     public let errors: [Error]

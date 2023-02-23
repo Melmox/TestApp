@@ -3,29 +3,27 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "WebViewController.viewDidLoad():WebViewController.swift">
+         contextName = "Services.delete(object:):Services.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fetch()">
+            </PersistentString>
+            <PersistentString
+               value = "object">
+            </PersistentString>
+            <PersistentString
+               value = "fetch().count">
+            </PersistentString>
+            <PersistentString
+               value = "news == fetch()[2]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "TableViewController.viewDidLoad():TableViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "listOfMailedNews.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "Services.saveHTMLPage():Services.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "URLSession.shared.dataTask(with: url)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "FavoriteTableViewController.tableView(_:leadingSwipeActionsConfigurationForRowAt:):FavoriteTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "listOfFavoriteNews[indexPath.row].toNews().isFavorite()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -41,22 +39,71 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "WebViewController.unarchive():WebViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+            <PersistentString
+               value = "archiveURL.path">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WebViewController.unarchive(archiveURL:):WebViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "FileManager.default">
+            </PersistentString>
+            <PersistentString
+               value = "archiveURL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WebViewController.viewDidLoad():WebViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "listOfFavoriteNews">
+            </PersistentString>
+            <PersistentString
+               value = "archive.url">
+            </PersistentString>
+            <PersistentString
+               value = "webViewArticle.loadFileURL(archiveURL, allowingReadAccessTo: archiveURL)">
+            </PersistentString>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+            <PersistentString
+               value = "listOfArchive.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in MostEmailedTableViewController.tableView(_:leadingSwipeActionsConfigurationForRowAt:):MostEmailedTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.archiveURL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FavoriteTableViewController.tableView(_:leadingSwipeActionsConfigurationForRowAt:):FavoriteTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "listOfFavoriteNews[indexPath.row].toNews().isFavorite()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "WebViewController.url.getter:WebViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "Services.delete(object:):Services.swift">
+         contextName = "Services.saveHTMLPage():Services.swift">
          <PersistentStrings>
             <PersistentString
-               value = "fetch()">
-            </PersistentString>
-            <PersistentString
-               value = "object">
-            </PersistentString>
-            <PersistentString
-               value = "fetch().count">
-            </PersistentString>
-            <PersistentString
-               value = "news == fetch()[2]">
+               value = "URLSession.shared.dataTask(with: url)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -5,5 +5,8 @@
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="SaveHTML" representedClassName="SaveHTML" syncable="YES"/>
+    <entity name="SaveHTML" representedClassName="SaveHTML" syncable="YES">
+        <attribute name="archiveURL" optional="YES" attributeType="URI"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
 </model>

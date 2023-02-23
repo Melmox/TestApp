@@ -7,6 +7,8 @@
 
 import UIKit
 
+    //Останній з вью контроллерів, також є таблицею але, на відміну від інших не підтягує дані з апі, а бере дані з інших контроллерів, для цього я використав NotificationCenter
+
 class FavoriteTableViewController: UITableViewController {
     
     @IBOutlet var FavoriteTable: UITableView!
@@ -60,6 +62,7 @@ class FavoriteTableViewController: UITableViewController {
         }
         )
         if listOfFavoriteNews[indexPath.row].toNews().isFavorite(){
+            WebArchiverServices().delete(url: listOfFavoriteNews[indexPath.row].url!)
             Services().delete(object: listOfFavoriteNews[indexPath.row].toNews())
             listOfFavoriteNews.remove(at: indexPath.row)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {

@@ -7,9 +7,13 @@
 
 import UIKit
 
+//Цей контролер дуже схожий на два інших, вони являють собою таблиці на які виводяться дані. З комірками можна взаємодіяти
+
 class MostSharedTableViewController: UITableViewController {
     @IBOutlet var mostSharedTable: UITableView!
     var listOfSharedNews =  [News]()
+    let archiveURL = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        .appendingPathComponent("cached").appendingPathExtension("webarchive")
 
     
     override func viewDidLoad() {
@@ -63,14 +67,23 @@ class MostSharedTableViewController: UITableViewController {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
             uploadedAction.title = "Remove Favorite"
             uploadedAction.backgroundColor = .systemYellow
+            WebArchiverServices().delete(url: listOfSharedNews[indexPath.row].url)
         }
         else{
             Services().save(object: listOfSharedNews[indexPath.row])
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
             uploadedAction.title = "Add Favorite"
             uploadedAction.backgroundColor = .systemBlue
-//            Services().archive()
-
+            WebArchiver.archive(url: URL(string: listOfSharedNews[indexPath.row].url)!) { result in
+                if let data = result.plistData {
+                    do {
+                        try data.write(to: self.archiveURL)
+                        WebArchiverServices().save(url: self.listOfSharedNews[indexPath.row].url, archiveURL: self.archiveURL)
+                    } catch {
+                        print("Error")
+                    }
+                }
+            }
         }
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [uploadedAction])
         swipeConfiguration.performsFirstActionWithFullSwipe = false

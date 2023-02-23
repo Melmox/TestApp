@@ -9,10 +9,10 @@ import Foundation
 import Alamofire
 import CoreData
 
-class Services{
+class Services{ //Допоміжний файл в якому отримувалися дані з апі та робилися дії із CoreData
     static let sharedInstance = Services()
     
-    func getApiData(partPathApi: String, handler: @escaping (_ apiData:[News])->Void){
+    func getApiData(partPathApi: String, handler: @escaping (_ apiData:[News])->Void){//Запит до апі для додавання даних
         let apiKey = "Di2u5Wdzh8DIRwrAJjU3tqTQxXhFefuI"
         let url = "https://api.nytimes.com/svc/mostpopular/v2/\(partPathApi)/30.json?api-key=\(apiKey)"
         
@@ -33,7 +33,7 @@ class Services{
     }
     
     let context = (UIApplication.shared.delegate as!AppDelegate).persistentContainer.viewContext
-    func save(object: News) {
+    func save(object: News) { //Збереження даних
         let news = NSEntityDescription.insertNewObject(forEntityName: "NewsEntity", into: context) as!NewsEntity
         news.id = Int64(exactly: object.id)!
         news.title = object.title
@@ -46,7 +46,7 @@ class Services{
         }
     }
     
-    func fetch() -> [NewsEntity] {
+    func fetch() -> [NewsEntity] { //Показ усіх даних
         var newsData = [NewsEntity]()
         do {
             newsData =
@@ -57,18 +57,7 @@ class Services{
         return newsData
     }
     
-    func fetchHTML() -> [NewsEntity] {
-        var newsData = [NewsEntity]()
-        do {
-            newsData =
-                try context.fetch(NewsEntity.fetchRequest())
-        } catch {
-            print("Couldnt fetch")
-        }
-        return newsData
-    }
-    
-    func delete(object: News){
+    func delete(object: News){ //Видалення даних
         let favNews = fetch()
         for favArticle in favNews{
             if object.id == favArticle.id{
