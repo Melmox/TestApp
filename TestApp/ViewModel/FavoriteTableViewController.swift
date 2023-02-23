@@ -9,8 +9,6 @@ import UIKit
 
 class FavoriteTableViewController: UITableViewController {
     
-
-
     @IBOutlet var FavoriteTable: UITableView!
     var listOfFavoriteNews =  [NewsEntity]()
     
@@ -43,6 +41,20 @@ class FavoriteTableViewController: UITableViewController {
 
 
     // MARK: - Navigation
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        var urlSend: String
+        urlSend = listOfFavoriteNews[indexPath.row].url!
+        performSegue(withIdentifier: "showFavorite", sender: urlSend)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? WebViewController, let urlSend = sender as? String {
+            vc.url = urlSend
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let uploadedAction = UIContextualAction(style: .normal, title: title, handler: { (action, view, completionHandler) in completionHandler(true)
         }

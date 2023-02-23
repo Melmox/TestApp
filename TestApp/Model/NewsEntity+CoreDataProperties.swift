@@ -2,7 +2,7 @@
 //  NewsEntity+CoreDataProperties.swift
 //  TestApp
 //
-//  Created by Мельник Максим on 22.02.2023.
+//  Created by Мельник Максим on 23.02.2023.
 //
 //
 
@@ -25,7 +25,6 @@ extension NewsEntity {
 extension NewsEntity : Identifiable {
 
 }
-
 extension NewsEntity{
     func toNews() -> News{
         return News(url: self.url!, title: self.title!, id: Int(self.id))

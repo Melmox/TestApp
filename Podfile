@@ -5,5 +5,6 @@ target 'TestApp' do
 use_frameworks!
   # Pods for TestApp
 pod 'Alamofire' 
+pod 'Fuzi'
 
 end

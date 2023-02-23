@@ -68,6 +68,7 @@ class MostViewedTableViewController: UITableViewController {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
             uploadedAction.title = "Add Favorite"
             uploadedAction.backgroundColor = .systemBlue
+//            Services().archive()
         }
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [uploadedAction])
         swipeConfiguration.performsFirstActionWithFullSwipe = false

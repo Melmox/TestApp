@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (5.6.4)
+  - Fuzi (3.1.3)
 
 DEPENDENCIES:
   - Alamofire
+  - Fuzi
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Fuzi
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Fuzi: 4c10d6449c0b49a85cd75b13844c559c0fc71220
 
-PODFILE CHECKSUM: 03726fedb81b77adca025719efcc7021d4810173
+PODFILE CHECKSUM: 3b4ab14d1bf07c773dada0f5ea21f05d01621505
 
 COCOAPODS: 1.11.3

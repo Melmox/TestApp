@@ -57,6 +57,17 @@ class Services{
         return newsData
     }
     
+    func fetchHTML() -> [NewsEntity] {
+        var newsData = [NewsEntity]()
+        do {
+            newsData =
+                try context.fetch(NewsEntity.fetchRequest())
+        } catch {
+            print("Couldnt fetch")
+        }
+        return newsData
+    }
+    
     func delete(object: News){
         let favNews = fetch()
         for favArticle in favNews{

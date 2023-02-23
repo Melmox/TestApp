@@ -61,16 +61,16 @@ class MostSharedTableViewController: UITableViewController {
         if listOfSharedNews[indexPath.row].isFavorite(){
             Services().delete(object: listOfSharedNews[indexPath.row])
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
-
             uploadedAction.title = "Remove Favorite"
             uploadedAction.backgroundColor = .systemYellow
         }
         else{
             Services().save(object: listOfSharedNews[indexPath.row])
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
-
             uploadedAction.title = "Add Favorite"
             uploadedAction.backgroundColor = .systemBlue
+//            Services().archive()
+
         }
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [uploadedAction])
         swipeConfiguration.performsFirstActionWithFullSwipe = false

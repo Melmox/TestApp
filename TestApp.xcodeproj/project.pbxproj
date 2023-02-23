@@ -23,6 +23,11 @@
 		B3ABA3ED29A63FA000D5D644 /* NewsEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA3EB29A63FA000D5D644 /* NewsEntity+CoreDataClass.swift */; };
 		B3ABA3EE29A63FA000D5D644 /* NewsEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA3EC29A63FA000D5D644 /* NewsEntity+CoreDataProperties.swift */; };
 		B3ABA3F029A64DA700D5D644 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA3EF29A64DA700D5D644 /* FavoriteTableViewController.swift */; };
+		B3ABA40629A6CA3600D5D644 /* SaveHTMLPage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA40429A6CA3600D5D644 /* SaveHTMLPage+CoreDataClass.swift */; };
+		B3ABA40729A6CA3600D5D644 /* SaveHTMLPage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA40529A6CA3600D5D644 /* SaveHTMLPage+CoreDataProperties.swift */; };
+		B3ABA40A29A6DE1F00D5D644 /* ArchivingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA40929A6DE1F00D5D644 /* ArchivingSession.swift */; };
+		B3ABA40C29A6DE5A00D5D644 /* WebArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA40B29A6DE5A00D5D644 /* WebArchive.swift */; };
+		B3ABA40E29A6DE8600D5D644 /* WebArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ABA40D29A6DE8600D5D644 /* WebArchiver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,11 @@
 		B3ABA3EB29A63FA000D5D644 /* NewsEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B3ABA3EC29A63FA000D5D644 /* NewsEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B3ABA3EF29A64DA700D5D644 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
+		B3ABA40429A6CA3600D5D644 /* SaveHTMLPage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SaveHTMLPage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B3ABA40529A6CA3600D5D644 /* SaveHTMLPage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SaveHTMLPage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B3ABA40929A6DE1F00D5D644 /* ArchivingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingSession.swift; sourceTree = "<group>"; };
+		B3ABA40B29A6DE5A00D5D644 /* WebArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebArchive.swift; sourceTree = "<group>"; };
+		B3ABA40D29A6DE8600D5D644 /* WebArchiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebArchiver.swift; sourceTree = "<group>"; };
 		B5ABB666E98967E768E77397 /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
 		C33BD787596FF3F585310409 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +125,8 @@
 		B3ABA3DC29A6064E00D5D644 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B3ABA40429A6CA3600D5D644 /* SaveHTMLPage+CoreDataClass.swift */,
+				B3ABA40529A6CA3600D5D644 /* SaveHTMLPage+CoreDataProperties.swift */,
 				B3ABA3EB29A63FA000D5D644 /* NewsEntity+CoreDataClass.swift */,
 				B3ABA3EC29A63FA000D5D644 /* NewsEntity+CoreDataProperties.swift */,
 				B3ABA3CD29A5113200D5D644 /* DataModel.swift */,
@@ -125,6 +137,7 @@
 		B3ABA3DD29A6066100D5D644 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B3ABA40829A6DDC400D5D644 /* WebArchiver */,
 				B3ABA3B229A4C0C400D5D644 /* AppDelegate.swift */,
 				B3ABA3D529A5709500D5D644 /* Services.swift */,
 			);
@@ -139,6 +152,16 @@
 				B3ABA3B829A4C0C400D5D644 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B3ABA40829A6DDC400D5D644 /* WebArchiver */ = {
+			isa = PBXGroup;
+			children = (
+				B3ABA40929A6DE1F00D5D644 /* ArchivingSession.swift */,
+				B3ABA40B29A6DE5A00D5D644 /* WebArchive.swift */,
+				B3ABA40D29A6DE8600D5D644 /* WebArchiver.swift */,
+			);
+			path = WebArchiver;
 			sourceTree = "<group>";
 		};
 		EB4335D52A292294C926F5C0 /* Pods */ = {
@@ -265,18 +288,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3ABA40729A6CA3600D5D644 /* SaveHTMLPage+CoreDataProperties.swift in Sources */,
 				B3ABA3D829A6058B00D5D644 /* MostSharedTableViewController.swift in Sources */,
 				B3ABA3ED29A63FA000D5D644 /* NewsEntity+CoreDataClass.swift in Sources */,
 				B3ABA3BD29A4C0C400D5D644 /* TestApp.xcdatamodeld in Sources */,
+				B3ABA40629A6CA3600D5D644 /* SaveHTMLPage+CoreDataClass.swift in Sources */,
+				B3ABA40A29A6DE1F00D5D644 /* ArchivingSession.swift in Sources */,
 				B3ABA3EE29A63FA000D5D644 /* NewsEntity+CoreDataProperties.swift in Sources */,
 				B3ABA3D029A52D8300D5D644 /* MostEmailedTableViewController.swift in Sources */,
 				B3ABA3F029A64DA700D5D644 /* FavoriteTableViewController.swift in Sources */,
 				B3ABA3B329A4C0C400D5D644 /* AppDelegate.swift in Sources */,
 				B3ABA3DA29A605C200D5D644 /* MostViewedTableViewController.swift in Sources */,
+				B3ABA40C29A6DE5A00D5D644 /* WebArchive.swift in Sources */,
 				B3ABA3B529A4C0C400D5D644 /* SceneDelegate.swift in Sources */,
 				B3ABA3D629A5709500D5D644 /* Services.swift in Sources */,
 				B3ABA3CE29A5113200D5D644 /* DataModel.swift in Sources */,
 				B3ABA3D429A53C1000D5D644 /* WebViewController.swift in Sources */,
+				B3ABA40E29A6DE8600D5D644 /* WebArchiver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

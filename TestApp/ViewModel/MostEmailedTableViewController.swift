@@ -11,6 +11,8 @@ import CoreData
 class MostEmailedTableViewController: UITableViewController {
     @IBOutlet var mostEmailedTable: UITableView!
     var listOfMailedNews =  [News]()
+    let archiveURL = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        .appendingPathComponent("cached").appendingPathExtension("webarchive")
     
     
     override func viewDidLoad() {
@@ -71,6 +73,16 @@ class MostEmailedTableViewController: UITableViewController {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
             uploadedAction.title = "Add Favorite"
             uploadedAction.backgroundColor = .systemBlue
+            WebArchiver.archive(url: URL(string: listOfMailedNews[indexPath.row].url)!) { result in
+                if let data = result.plistData {
+                    do {
+                        try data.write(to: self.archiveURL)
+                        print("Sucsess")
+                    } catch {
+                        print("Error")
+                    }
+                }
+            }
         }
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [uploadedAction])
         swipeConfiguration.performsFirstActionWithFullSwipe = false
