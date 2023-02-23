@@ -51,5 +51,16 @@ class WebArchiverServices{//Допоміжний клас що використ�
             print("Could not delete: \(error)")
         }
     }
+    func storeUpToDate(){
+        let saveHTMLData = fetch()
+        for data in saveHTMLData{
+            let dataURL = data.url!
+            let idURL = data.archiveURL?.deletingPathExtension().pathComponents
+            let archiveURL = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                .appendingPathComponent(idURL![idURL!.count - 1]).appendingPathExtension("webarchive")
+            delete(url: dataURL)
+            save(url: dataURL, archiveURL: archiveURL)
+        }
+    }
 //        На відміну від файлу Services.swift містить лише функції для обробки сутності SaveHTML
 }

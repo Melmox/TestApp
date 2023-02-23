@@ -13,10 +13,9 @@ import CoreData
 class MostEmailedTableViewController: UITableViewController {
     @IBOutlet var mostEmailedTable: UITableView!
     var listOfMailedNews =  [News]()
-    let archiveURL = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        .appendingPathComponent("cached").appendingPathExtension("webarchive")
     
     override func viewDidLoad() {
+        WebArchiverServices().storeUpToDate()
         super.viewDidLoad()
         Services.sharedInstance.getApiData(partPathApi: "emailed") { apiData in
             self.listOfMailedNews = apiData
@@ -75,11 +74,13 @@ class MostEmailedTableViewController: UITableViewController {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
             uploadedAction.title = "Add Favorite"
             uploadedAction.backgroundColor = .systemBlue
+            let archiveURL = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                .appendingPathComponent(String(listOfMailedNews[indexPath.row].id)).appendingPathExtension("webarchive")
             WebArchiver.archive(url: URL(string: listOfMailedNews[indexPath.row].url)!) { result in
                 if let data = result.plistData {
                     do {
-                        try data.write(to: self.archiveURL)
-                        WebArchiverServices().save(url: self.listOfMailedNews[indexPath.row].url, archiveURL: self.archiveURL)
+                        try data.write(to: archiveURL)
+                        WebArchiverServices().save(url: self.listOfMailedNews[indexPath.row].url, archiveURL: archiveURL)
                     } catch {
                         print("Error")
                     }

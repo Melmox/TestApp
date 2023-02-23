@@ -12,11 +12,10 @@ import UIKit
 class MostSharedTableViewController: UITableViewController {
     @IBOutlet var mostSharedTable: UITableView!
     var listOfSharedNews =  [News]()
-    let archiveURL = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        .appendingPathComponent("cached").appendingPathExtension("webarchive")
 
     
     override func viewDidLoad() {
+        WebArchiverServices().storeUpToDate()
         super.viewDidLoad()
         Services.sharedInstance.getApiData(partPathApi: "shared") { apiData in
             self.listOfSharedNews = apiData
@@ -74,11 +73,13 @@ class MostSharedTableViewController: UITableViewController {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
             uploadedAction.title = "Add Favorite"
             uploadedAction.backgroundColor = .systemBlue
+            let archiveURL = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                .appendingPathComponent(String(listOfSharedNews[indexPath.row].id)).appendingPathExtension("webarchive")
             WebArchiver.archive(url: URL(string: listOfSharedNews[indexPath.row].url)!) { result in
                 if let data = result.plistData {
                     do {
-                        try data.write(to: self.archiveURL)
-                        WebArchiverServices().save(url: self.listOfSharedNews[indexPath.row].url, archiveURL: self.archiveURL)
+                        try data.write(to: archiveURL)
+                        WebArchiverServices().save(url: self.listOfSharedNews[indexPath.row].url, archiveURL: archiveURL)
                     } catch {
                         print("Error")
                     }

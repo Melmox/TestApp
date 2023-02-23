@@ -18,10 +18,6 @@ class WebViewController: UIViewController {
 
     @IBOutlet weak var webViewArticle: WKWebView!
     var url = ""
-    let archiveURL = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        .appendingPathComponent("cached").appendingPathExtension("webarchive")
-    
-    
     override func viewDidLoad() {
         listOfFavoriteNews = Services().fetch()
         listOfArchive = WebArchiverServices().fetch()

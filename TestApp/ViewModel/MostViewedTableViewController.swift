@@ -12,10 +12,9 @@ import UIKit
 class MostViewedTableViewController: UITableViewController {
     @IBOutlet var mostViewedTable: UITableView!
     var listOfViewedNews =  [News]()
-    let archiveURL = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        .appendingPathComponent("cached").appendingPathExtension("webarchive")
 
     override func viewDidLoad() {
+        WebArchiverServices().storeUpToDate()
         super.viewDidLoad()
         Services.sharedInstance.getApiData(partPathApi: "viewed") { apiData in
             self.listOfViewedNews = apiData
@@ -46,7 +45,6 @@ class MostViewedTableViewController: UITableViewController {
      override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          tableView.deselectRow(at: indexPath, animated: true)
          var urlSend: String
-//         Services().saveData(itemToSave: listOfViewedNews[indexPath.row].title)
          urlSend = listOfViewedNews[indexPath.row].url
          performSegue(withIdentifier: "showMostViewed", sender: urlSend)
 
@@ -73,11 +71,13 @@ class MostViewedTableViewController: UITableViewController {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
             uploadedAction.title = "Add Favorite"
             uploadedAction.backgroundColor = .systemBlue
+            let archiveURL = try! FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                .appendingPathComponent(String(listOfViewedNews[indexPath.row].id)).appendingPathExtension("webarchive")
             WebArchiver.archive(url: URL(string: listOfViewedNews[indexPath.row].url)!) { result in
                 if let data = result.plistData {
                     do {
-                        try data.write(to: self.archiveURL)
-                        WebArchiverServices().save(url: self.listOfViewedNews[indexPath.row].url, archiveURL: self.archiveURL)
+                        try data.write(to: archiveURL)
+                        WebArchiverServices().save(url: self.listOfViewedNews[indexPath.row].url, archiveURL: archiveURL)
                     } catch {
                         print("Error")
                     }
